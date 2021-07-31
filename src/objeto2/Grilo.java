@@ -16,8 +16,8 @@ public class Grilo extends Thread {
 
 	public void run() {
 		//Exibe a Thread atual 
-		Thread t = Thread.currentThread();
-		System.out.println(t.getName());
+		//Thread t = Thread.currentThread();
+		//System.out.println(t.getName());
 		
 		//Log de distancia percorrida pelo Grilo
 		while(posicaoAtual < chegada) {
