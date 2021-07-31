@@ -6,11 +6,13 @@ public class Grilo extends Thread {
 	private int min = 10;
 	private int max = 30;
 	private int posicaoAtual;
-	private int chegada = 500;
+	private int chegada;
+	private int pulos;
 	
 	//Construtor
-	public Grilo(String nome) {
+	public Grilo(String nome, int chegada) {
 		this.nome = nome;
+		this.chegada = chegada;
 		start();
 	}
 
@@ -24,11 +26,14 @@ public class Grilo extends Thread {
 			int pulo = (int)Math.floor(Math.random()*(max-min+1)+min);
 			posicaoAtual += pulo;
 			System.out.println(nome + " pulou " + pulo + "cm. " + nome + " percorreu " + posicaoAtual + "cm");
+			
+		//Contar o Número de Pulos
+			pulos++;
 		}
 		
 		//Exibe que o Grilo atingiu a linha de chegada
 		if(posicaoAtual >= chegada) {
-			System.out.println(nome + " atingiu a linha de chegada!");
+			System.out.println(nome + " atingiu a linha de chegada!" + " Total de pulos: " + pulos);
 		}
 		
 	}
